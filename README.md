@@ -1,6 +1,16 @@
 # ECE576A
 Engineering of Computer Based Systems
 
+How to run the project:
+```bash
+sudo apt install -y vagrant virtualbox
+git clone https://github.com/mitchdz/ECE576A
+cd ECE576A
+vagrant up
+```
+
+
+
 ## How to use this project
 Vagrant is used to simulate the DNS network. The Vagrantfile provided spins up multiple VMs which are configured in the following manner:
 
