@@ -57,7 +57,10 @@ Vagrant.configure(2) do |config|
       end
 
       config.vm.synced_folder ".", "/vagrant", disabled: false
-      config.vm.provision :shell, inline: "cp /vagrant/scripts/startup/" + opts[:name] + "_startup.sh ~/"
+      config.vm.provision :shell, inline: "/vagrant/scripts/install/" + opts[:name] + "_install.sh"
+      config.vm.provision :shell, inline: "cp /vagrant/scripts/setup/" + opts[:name] + "_setup.sh ~/"
+
+
 
       config.vm.network :private_network, ip: opts[:eth1]
     end
