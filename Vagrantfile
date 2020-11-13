@@ -4,13 +4,13 @@
 boxes = [
     {
         :name => "dns",
-        :eth1 => "192.168.120.2",
+        :eth1 => "192.168.120.8",
         :mem => "2048",
         :cpu => "2"
     },
     {
         :name => "dns-backup",
-        :eth1 => "192.168.120.3",
+        :eth1 => "192.168.120.9",
         :mem => "2048",
         :cpu => "2"
     },
@@ -58,7 +58,7 @@ Vagrant.configure(2) do |config|
 
       config.vm.synced_folder ".", "/vagrant", disabled: false
       config.vm.provision :shell, inline: "/vagrant/scripts/install/" + opts[:name] + "_install.sh"
-      config.vm.provision :shell, inline: "cp /vagrant/scripts/setup/" + opts[:name] + "_setup.sh ~/"
+      config.vm.provision :shell, inline: "cp /vagrant/scripts/startup/" + opts[:name] + "_startup.sh ~/"
 
 
 

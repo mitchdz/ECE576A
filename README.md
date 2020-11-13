@@ -26,8 +26,8 @@ Vagrant is used to simulate the DNS network. The Vagrantfile provided spins up m
 
 | IP addr | Distribution | Purpose | Services |
 | --- | --- | --- | -- |
-| 192.168.120.2 | Ubuntu 20.04 | dns | bind9, isc-dhcp-server, heartbeat |
-| 192.168.120.3 | Ubuntu 20.04 | dns-backup | same as dns |
+| 192.168.120.8 | Ubuntu 20.04 | dns | bind9, isc-dhcp-server, heartbeat |
+| 192.168.120.9 | Ubuntu 20.04 | dns-backup | same as dns |
 | 192.168.120.100 | Ubuntu 20.04 | internal-test | network tools |
 | 192.168.120.101 | Ubuntu 20.04 | webserver | apache2 |
 | 192.168.121.10 | Ubuntu 20.04 | external-test | network tools|
