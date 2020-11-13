@@ -50,6 +50,9 @@ Vagrant.configure(2) do |config|
         v.customize ["modifyvm", :id, "--cpus", opts[:cpu]]
       end
 
+      config.vm.synced_folder ".", "/vagrant", disabled: false
+      config.vm.provision :shell, inline: "/vagrant/scripts/startup/" + opts[:name] + "_startup.sh"
+
       config.vm.network :private_network, ip: opts[:eth1]
     end
   end
