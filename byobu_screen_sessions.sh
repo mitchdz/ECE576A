@@ -1,0 +1,1 @@
+BYOBU_WINDOWS=windows.vagrant_ssh_sessions byobu

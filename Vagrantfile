@@ -15,7 +15,7 @@ boxes = [
         :cpu => "2"
     },
     {
-        :name => "dev",
+        :name => "internal-test",
         :eth1 => "192.168.120.100",
         :mem => "2048",
         :cpu => "2"
@@ -27,8 +27,8 @@ boxes = [
         :cpu => "2"
     },
     {
-        :name => "outside",
-        :eth1 => "192.168.121.2",
+        :name => "external-test",
+        :eth1 => "192.168.121.10",
         :mem => "2048",
         :cpu => "2"
     }
@@ -57,7 +57,7 @@ Vagrant.configure(2) do |config|
       end
 
       config.vm.synced_folder ".", "/vagrant", disabled: false
-      config.vm.provision :shell, inline: "/vagrant/scripts/startup/" + opts[:name] + "_startup.sh"
+      config.vm.provision :shell, inline: "cp /vagrant/scripts/startup/" + opts[:name] + "_startup.sh ~/"
 
       config.vm.network :private_network, ip: opts[:eth1]
     end

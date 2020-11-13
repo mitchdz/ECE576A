@@ -1,0 +1,5 @@
+screen -t dns vagrant ssh dns
+screen -t dns-backup vagrant ssh dns-backup
+screen -t internal-test vagrant ssh internal-test
+screen -t webserver vagrant ssh webserver
+screen -t external-test vagrant ssh external-test
