@@ -45,11 +45,6 @@ Vagrant.configure(2) do |config|
     config.vm.define opts[:name] do |config|
       config.vm.hostname = opts[:name]
 
-      config.vm.provider "vmware_fusion" do |v|
-        v.vmx["memsize"] = opts[:mem]
-        v.vmx["numvcpus"] = opts[:cpu]
-      end
-
       config.vm.provider "virtualbox" do |v|
         v.customize ["modifyvm", :id, "--name", opts[:name]]
         v.customize ["modifyvm", :id, "--memory", opts[:mem]]
