@@ -1,0 +1,36 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+acl "internal_subnets" {
+	192.168.120/24;
+	localhost;
+	localnets;
+};
+
+view	"internal"
+{
+	
+	include "/etc/bind/zones.internal";
+	match-clients	{ internal_subnets; };
+	allow-transfer	{ any; };
+	recursion yes;
+	allow-query-cache { internal_subnets; };
+	allow-recursion { internal_subnets; };
+//	query-source address 192.168.120.55;
+};
+
+
+view	"external"
+{
+	include "/etc/bind/zones.external";
+	match-clients	{ any; };
+	match-destinations	{ any; };
+	recursion no;
+};
+
+

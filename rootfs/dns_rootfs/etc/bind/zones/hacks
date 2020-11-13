@@ -1,0 +1,26 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+hacks.	IN	SOA	ns.hacks.arizona.edu. webmaster.hacks.arizona.edu. (
+				2020111301 ; serial
+				60       ; refresh (20 minutes)
+				60       ; retry (30 minutes)
+				120      ; expire (1 hour)
+				60	     ; minimum (30 minutes)
+				)
+hacks.		IN	NS	ns.hacks.arizona.edu.
+hacks.		IN	NS	ns1.hacks.
+
+
+
+$ORIGIN hacks.
+; A RECORDS
+ns			A	192.168.120.2
+primary			A	192.168.120.8
+reserve			A	192.168.1120.9
+resolver		A	192.168.120.5
+webserver			A	192.168.120.101
+internal-test			A	192.168.120.100
+external-test			A	192.168.121.10
+
+; CNAMES
+www			CNAME	webserver
