@@ -20,7 +20,7 @@ cd ECE576A
 vagrant up
 ```
 
-I personally chose to use byobu with screen as the backend to manage the vagrant VMs. To do this, run the following:
+We chose to use byobu with screen as the backend to manage the vagrant VMs. To do this, run the following:
 ```bash
 ./byobu_screen_sessions.sh
 ```
