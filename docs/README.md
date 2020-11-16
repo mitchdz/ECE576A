@@ -9,8 +9,9 @@ This project aims to create a safe virtual environment to create a functioning D
 
 * vagrant
 * git
-* OPTIONAL - byobu & screen
+* *byobu & screen
 
+** means optional*
 ### 2) clone repository and run vagrant
 ```bash
 sudo apt install -y vagrant virtualbox
