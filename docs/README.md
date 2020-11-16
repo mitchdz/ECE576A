@@ -2,8 +2,7 @@
 Engineering of Computer Based Systems
 
 ## What is this project
-This project 
-
+This project aims to create a safe virtual environment to create a functioning DNS. This environment is planned to be easily integrated into a real server room, but allows for testing new softwares and potentially unsafe configurations without worrying about accidentally enabling something on a live network.
 
 ## How to run the project
 ### 1) prerequisites
