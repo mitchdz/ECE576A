@@ -9,7 +9,7 @@
 acl "internal_subnets" {
 	192.168.120/24;
 	localhost;
-	localnets;
+//	localnets;
 };
 
 view	"internal"

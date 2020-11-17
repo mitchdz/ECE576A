@@ -1,20 +1,13 @@
 	zone "hacks.arizona.edu" {
-		type master;
-		check-names ignore;
-		file "/etc/bind/zones/hacks.arizona.edu";
-		allow-transfer { 192.168.120.2; 192.168.120.3; };
+		in-view internal;
 
 	};
 
 	zone "hacks-rev.120.168.192.in-addr.arpa" {
-		type master;
-		file "/etc/bind/zones/hacks-rev.120.168.192.in-addr.arpa";
+		in-view internal;
 	};
 
 	zone "hacks" {
-                type master;
-                file "/etc/bind/zones/hacks";
-                allow-transfer { any; };
-                allow-query { any; };
+			in-view internal;
         };
 
