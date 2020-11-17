@@ -1,6 +1,6 @@
 	zone "." in{
 		type hint;
-		file "/etc/bind/db.root";
+		file "/usr/share/dns/root.hints";
 	};
 
 	zone "hacks.arizona.edu" {
