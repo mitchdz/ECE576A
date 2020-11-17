@@ -15,7 +15,7 @@ $ORIGIN hacks.arizona.edu.
 ; A RECORDS
 ns			A	192.168.120.2
 primary			A	192.168.120.8
-reserve			A	192.168.1120.9
+reserve			A	192.168.120.9
 resolver		A	192.168.120.5
 webserver			A	192.168.120.101
 internal-test			A	192.168.120.100
