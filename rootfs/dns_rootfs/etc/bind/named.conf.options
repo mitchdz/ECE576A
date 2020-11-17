@@ -13,6 +13,7 @@ options {
 	directory "/var/cache/bind";
 
 	recursion no;
+	allow-recursion { none; };
 	allow-transfer { 192.168.120.3; };
 	notify yes;	
 	// If there is a firewall between you and nameservers you want

@@ -1,6 +1,5 @@
 	zone "hacks.arizona.edu" {
 		in-view internal;
-
 	};
 
 	zone "hacks-rev.120.168.192.in-addr.arpa" {
@@ -8,6 +7,6 @@
 	};
 
 	zone "hacks" {
-			in-view internal;
-        };
+		in-view internal;
+	};
 

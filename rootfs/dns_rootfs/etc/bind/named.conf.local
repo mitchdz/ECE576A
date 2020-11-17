@@ -17,8 +17,9 @@ view	"internal"
 	
 	include "/etc/bind/zones.internal";
 	match-clients	{ internal_subnets; };
-	allow-transfer	{ any; };
+	allow-transfer	{ none; };
 	recursion yes;
+	allow-query { internal_subnets; };
 	allow-query-cache { internal_subnets; };
 	allow-recursion { internal_subnets; };
 //	query-source address 192.168.120.55;
@@ -30,7 +31,11 @@ view	"external"
 	include "/etc/bind/zones.external";
 	match-clients	{ any; };
 	match-destinations	{ any; };
+	allow-query { any; };
+	allow-recursion { none; };
+	allow-query-cache { none; };
 	recursion no;
+	forwarders {};
 };
 
 
