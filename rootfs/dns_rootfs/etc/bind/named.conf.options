@@ -9,11 +9,19 @@ acl "hacks-nameservers" {
 	localhost;
 };
 
+acl "internal_subnets" {
+	192.168.120/24;
+	localhost;
+//	localnets;
+};
+
 options {
 	directory "/var/cache/bind";
 
 	recursion no;
-	allow-recursion { none; };
+//	allow-recursion { internal_subnets; };
+//	allow-query-cache { internal_subnets; };
+//	allow-query { any; }
 	allow-transfer { 192.168.120.3; };
 	notify yes;	
 	// If there is a firewall between you and nameservers you want
@@ -25,10 +33,11 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	forwarders {
-		1.1.1.1;
-		8.8.8.8;
-	};
+	
+//	forwarders {
+//		1.1.1.1;
+//		8.8.8.8;
+//	};
 
 	//========================================================================
 	// If BIND logs error messages about the root key being expired,

@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 120	; 2 minutes
 hacks.	IN	SOA	ns.hacks.arizona.edu. webmaster.hacks.arizona.edu. (
-				2020111301 ; serial
+				2020111601 ; serial
 				60       ; refresh (20 minutes)
 				60       ; retry (30 minutes)
 				120      ; expire (1 hour)

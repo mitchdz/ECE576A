@@ -23,6 +23,10 @@ view	"internal"
 	allow-query-cache { internal_subnets; };
 	allow-recursion { internal_subnets; };
 //	query-source address 192.168.120.55;
+	forwarders {
+			1.1.1.1;
+			8.8.8.8;
+	};
 };
 
 
