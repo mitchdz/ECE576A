@@ -12,7 +12,7 @@ boxes = [
     {
         :name => "dns-backup",
         :eth1 => "192.168.120.9",
-	:eth2 => "0.0.0.0",
+        :eth3 => "192.168.120.3",
         :mem => "2048",
         :cpu => "2"
     },
@@ -56,10 +56,16 @@ Vagrant.configure(2) do |config|
       config.vm.provision :shell, inline: "cp /vagrant/scripts/startup/" + opts[:name] + "_startup.sh ~/"
 
       # set ethernet port
-      config.vm.network :private_network, ip: opts[:eth1], netmask: "16"
-      if opts[:eth2]
-        config.vm.network :private_network, ip: opts[:eth2], netmask: "16"
+      config.vm.network :private_network, ip: opts[:eth1], netmask: "255.255.0.0", virtualbox__intnet: true
+      if opts.key?(:eth2)
+        config.vm.network :private_network, ip: opts[:eth2], netmask: "255.255.0.0", virtualbox__intnet: true
       end
+      if opts.key?(:eth3)
+        config.vm.network :private_network, ip: opts[:eth3], auto_config:false, virtualbox__intnet: true
+      end
+
+
+
     end
   end
 end
