@@ -47,5 +47,5 @@ options {
 
 	auth-nxdomain no;    # conform to RFC1035
 	listen-on { hacks-nameservers;};
-	listen-on-v6 { any; };
+//	listen-on-v6 { any; };
 };

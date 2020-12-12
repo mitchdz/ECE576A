@@ -6,11 +6,11 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-acl "internal_subnets" {
-	192.168.120/24;
-	localhost;
+//acl "internal_subnets" {
+//	192.168.120/24;
+//	localhost;
 //	localnets;
-};
+//};
 
 view	"internal"
 {
