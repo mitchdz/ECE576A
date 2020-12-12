@@ -1,0 +1,21 @@
+$ORIGIN .
+$TTL 86400	; 1 day
+hacks-rev.120.168.192.in-addr.arpa IN SOA ns.hacks.arizona.edu. postmaster.hacks.arizona.edu. (
+				2020111301 ; serial
+				60      ; refresh (1 hour)
+				60       ; retry (30 minutes)
+				120     ; expire (1 week)
+				60       ; minimum (1 hour)
+				)
+			NS	ns.hacks.arizona.edu.
+			NS	ns.nocko.se.
+
+$ORIGIN hacks-rev.120.168.192.in-addr.arpa.
+2			PTR	ns.hacks.arizona.edu.
+5			PTR	resolver.hacks.arizona.edu.
+8			PTR	primary.hacks.arizona.edu.
+9			PTR	reserve.hacks.arizona.edu.
+10			PTR	external-test.hacks.arizona.edu.
+100			PTR	internal-test.hacks.arizona.edu.
+101			PTR	webserver.hacks.arizona.edu.
+

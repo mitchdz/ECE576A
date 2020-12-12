@@ -1,0 +1,26 @@
+	zone "." in{
+		type hint;
+		file "/usr/share/dns/root.hints";
+	};
+
+	zone "hacks.arizona.edu" {
+		type master;
+		check-names ignore;
+		file "/etc/bind/zones/hacks.arizona.edu";
+		allow-query { any; };
+		forwarders {};
+	};
+
+	zone "hacks-rev.120.168.192.in-addr.arpa" {
+		type master;
+		file "/etc/bind/zones/hacks-rev.120.168.192.in-addr.arpa";
+		allow-query { any; };
+		forwarders {};
+	};
+
+	zone "hacks" {
+		type master;
+		file "/etc/bind/zones/hacks";
+		allow-query { any; };
+		forwarders {};
+	};

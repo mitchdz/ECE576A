@@ -1,0 +1,27 @@
+$ORIGIN .
+$TTL 1800	; 30 minutes
+hacks.arizona.edu	IN SOA	ns.hacks.arizona.edu. postmaster.hacks.arizona.edu. (
+				2020111301 ; serial
+				60      ; refresh (1 hour)
+				60       ; retry (30 minutes)
+				120       ; expire (1 hour)
+				60       ; minimum (30 minutes)
+				)
+			NS	ns.hacks.arizona.edu.
+			A	192.168.120.101 ; Used to be 27
+			MX	0 mailgator.email.arizona.edu.
+
+$ORIGIN hacks.arizona.edu.
+; A RECORDS
+ns			A	192.168.120.2
+primary			A	192.168.120.8
+reserve			A	192.168.120.9
+resolver		A	192.168.120.5
+webserver			A	192.168.120.101
+internal-test			A	192.168.120.100
+external-test			A	192.168.121.10
+
+
+
+; CNAMES
+www			CNAME	webserver

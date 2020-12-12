@@ -1,0 +1,51 @@
+acl "hacks-nameservers" {
+	// Authoritative 
+	192.168.120.2;
+	// Recursive
+	192.168.120.5;
+	192.168.120.55;
+	// Local
+	192.168.120/24;
+	localhost;
+};
+
+acl "internal_subnets" {
+	192.168.120/24;
+	localhost;
+//	localnets;
+};
+
+options {
+	directory "/var/cache/bind";
+
+	recursion no;
+//	allow-recursion { internal_subnets; };
+//	allow-query-cache { internal_subnets; };
+//	allow-query { any; }
+	allow-transfer { 192.168.120.3; };
+	notify yes;	
+	// If there is a firewall between you and nameservers you want
+	// to talk to, you may need to fix the firewall to allow multiple
+	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+	// If your ISP provided one or more IP addresses for stable 
+	// nameservers, you probably want to use them as forwarders.  
+	// Uncomment the following block, and insert the addresses replacing 
+	// the all-0's placeholder.
+
+	
+//	forwarders {
+//		1.1.1.1;
+//		8.8.8.8;
+//	};
+
+	//========================================================================
+	// If BIND logs error messages about the root key being expired,
+	// you will need to update your keys.  See https://www.isc.org/bind-keys
+	//========================================================================
+	dnssec-validation auto;
+
+	auth-nxdomain no;    # conform to RFC1035
+	listen-on { hacks-nameservers;};
+//	listen-on-v6 { any; };
+};
